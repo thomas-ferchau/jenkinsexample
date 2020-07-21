@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+	    label 'fargate-workers'
+	}
 
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '10'))
