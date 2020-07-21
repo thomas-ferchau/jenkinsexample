@@ -3,7 +3,7 @@ pipeline {
 	    //label 'fargate-workers'
         ecs {
             inheritFrom 'fargate-workers'
-            image '$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/samplejenkinsonawsecs/workers/jenkinsexample/ubuntu1404:latest'
+            image '762845314743.dkr.ecr.eu-central-1.amazonaws.com/samplejenkinsonawsecs/workers/jenkinsexample/ubuntu1404:latest'
             //cpu 2048
             //memory 4096
             //logDriver 'fluentd'
