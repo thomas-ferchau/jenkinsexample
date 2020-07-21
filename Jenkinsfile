@@ -1,6 +1,15 @@
 pipeline {
 	agent {
-	    label 'fargate-workers'
+	    //label 'fargate-workers'
+        ecs {
+            inheritFrom 'fargate-workers'
+            image '$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/samplejenkinsonawsecs/workers/jenkinsexample/ubuntu1404:latest'
+            //cpu 2048
+            //memory 4096
+            //logDriver 'fluentd'
+            //logDriverOptions([[name: 'foo', value:'bar'], [name: 'bar', value: 'foo']])
+            //portMappings([[containerPort: 22, hostPort: 22, protocol: 'tcp'], [containerPort: 443, hostPort: 443, protocol: 'tcp']])
+        }
 	}
 
 	options {
